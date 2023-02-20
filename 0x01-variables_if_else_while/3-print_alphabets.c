@@ -9,6 +9,7 @@
 int main(void)
 {
 
+	char sec = 'A';
 	char first = 'a';
 
 	while (first <= 'z')
@@ -17,7 +18,6 @@ int main(void)
 		first++;
 	}
 
-	char sec = 'A';
 
 	while (sec <= 'Z')
 	{
