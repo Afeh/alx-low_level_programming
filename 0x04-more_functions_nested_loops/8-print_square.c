@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_square - Print line
+ *
+ *@size : Number of times line should be printed
+ * Return: void
+ */
+
 void print_square(int size)
 {
 	int i;
@@ -12,6 +19,5 @@ void print_square(int size)
 			_putchar('#');
 		}
 		_putchar('\n');
-		
 	}
 }
