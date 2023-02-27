@@ -5,3 +5,4 @@ _putchar.c
 3-puts
 *-main.c
 4-print_rev
+5-rev_string
