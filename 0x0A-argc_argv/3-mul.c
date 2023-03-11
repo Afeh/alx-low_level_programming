@@ -11,8 +11,6 @@
 
 int main(int argc, char **argv)
 {
-	int i;
-
 
 	int result;
 
@@ -23,13 +21,10 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		for (i = 1; 1 < argc; i++)
-		{
-			result *= atoi(argv[i]);
-		}
+		result = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", result);
+		return (0);
 	}
 
-	return (0);
 
 }
