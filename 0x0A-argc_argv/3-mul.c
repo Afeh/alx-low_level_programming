@@ -16,12 +16,12 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("Error");
+		printf("Error\n");
 	}
 	else
 	{
 		result = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d", result);
+		printf("%d\n", result);
 	}
 
 	return (1);
