@@ -53,6 +53,15 @@ char *str_concat(char *s1, char *s2)
 	unsigned int size_s2;
 	char *concatd;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	size_s1 = length(s1);
 	size_s2 = length(s2);
 
