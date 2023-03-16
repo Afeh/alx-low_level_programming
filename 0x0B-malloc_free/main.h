@@ -6,3 +6,4 @@ unsigned int length(char *string);
 int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
+void ch_free_grid(char **grid, unsigned int height);
