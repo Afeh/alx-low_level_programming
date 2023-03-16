@@ -18,6 +18,7 @@ unsigned int length(char *string)
 	unsigned int i;
 	unsigned int length;
 
+	length = 0;
 	i = 0;
 
 	if (string == NULL)
