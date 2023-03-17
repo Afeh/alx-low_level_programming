@@ -48,10 +48,16 @@ unsigned int length(char *string)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *result;
-	unsigned int i, j, size_s1;
+	unsigned int i, j, size_s1, size_s2;
 
 
 	size_s1 = length(s1);
+	size_s2 = length(s2);
+
+	if (n >= size_s2)
+	{
+		n = size_s2;
+	}
 
 	if (s1 == NULL)
 	{
@@ -63,7 +69,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	result = malloc(size_s1 + n + 1);
+	result = malloc((size_s1 + n + 1) * sizeof(char));
 
 	if (result == NULL)
 	{
