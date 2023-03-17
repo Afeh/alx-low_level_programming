@@ -1,93 +1,45 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
- * length - finds the length of a string
+ * *string_nconcat - concatenates n bytes of a string to another string
+ * @s1: string to append to
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
  *
- *
- * @string: the length to be calculated
- *
- * Return: pointer to newly allocated string concatenation
- *
+ * Return: pointer to the resulting string
  */
-
-
-unsigned int length(char *string)
-{
-	unsigned int i;
-	unsigned int length;
-
-	length = 0;
-	i = 0;
-
-	if (string == NULL)
-	{
-		string = "";
-	}
-	else
-	{
-		while (string[i] != '\0')
-		{
-			length++;
-			i++;
-		}
-	}
-
-	return (length);
-}
-
-/**
- * *string_nconcat - nested loop to make grid
- * @s1: width input
- * @s2: height input
- * @n: extent of s2 to be printed
- * Return: pointer to 2 dim. array
- */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *result;
-	unsigned int i, j, size_s1, size_s2;
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	size_s1 = length(s1);
-	size_s2 = length(s2);
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-	if (n >= size_s2)
-	{
-		n = size_s2;
-	}
-
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-
-	result = malloc((size_s1 + n + 1) * sizeof(char));
-
-	if (result == NULL)
-	{
+	if (!s)
 		return (NULL);
-	}
 
-	for (i = 0; i < size_s1; i++)
+	while (i < len1)
 	{
-		result[i] = s1[i];
+		s[i] = s1[i];
+		i++;
 	}
 
-	for (j = 0; j <= n; j++)
-	{
-		result[i++] = s2[j];
-	}
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
 
-	result[i] = '\0';
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
 
-	return (result);
+	s[i] = '\0';
 
+	return (s);
 }
