@@ -1,93 +1,49 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * length - finds the length of a string
+ * *str_concat - function concatenates two strings
  *
+ * @s1: string 1
+ * @s2: string 2
  *
- * @string: the length to be calculated
- *
- * Return: pointer to newly allocated string concatenation
- *
+ * Return: pointer to newly allocated space and NULL on failure
  */
 
-
-unsigned int length(char *string)
+char *str_concat(char *s1, char *s2)
 {
-	unsigned int i;
-	unsigned int length;
+	char *mem;
+	int len1, len2;
+	int total_len;
 
-	length = 0;
-	i = 0;
-
-	if (string == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
-		string = "";
+		s1 = "";
+		s2 = "";
 	}
-	else
-	{
-		while (string[i] != '\0')
-		{
-			length++;
-			i++;
-		}
-	}
-
-	return (length);
-}
-
-/**
- * *string_nconcat - nested loop to make grid
- * @s1: width input
- * @s2: height input
- * @n: extent of s2 to be printed
- * Return: pointer to 2 dim. array
- */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
-	char *result;
-	unsigned int i, j, size_s1, size_s2;
-
-
-	size_s1 = length(s1);
-	size_s2 = length(s2);
-
-	if (n >= size_s2)
-	{
-		n = size_s2;
-	}
-
-	if (s1 == NULL)
+	else if (s1 == NULL)
 	{
 		s1 = "";
 	}
-
-	if (s2 == NULL)
+	else if (s2 == NULL)
 	{
 		s2 = "";
 	}
 
-	result = malloc((size_s1 + n + 1) * sizeof(char));
+	len1 = strlen(s1);
+	len2 = strlen(s2);
+	total_len = len1 + len2 + 1;
 
-	if (result == NULL)
+	mem = malloc(sizeof(char) * total_len);
+
+	if (mem == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < size_s1; i++)
-	{
-		result[i] = s1[i];
-	}
+	memcpy(mem, s1, len1);
+	memcpy(mem + len1, s2, len2 + 1);
 
-	for (j = 0; j <= n; j++)
-	{
-		result[i++] = s2[j];
-	}
-
-	result[i] = '\0';
-
-	return (result);
-
+	return (mem);
 }
