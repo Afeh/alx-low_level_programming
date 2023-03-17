@@ -11,7 +11,7 @@
  * Return: pointer to newly allocated space and NULL on failure
  */
 
-char *str_concat(char *s1, char *s2)
+char *str_noncat(char *s1, char *s2)
 {
 	char *mem;
 	int len1, len2;
