@@ -7,7 +7,7 @@
  */
 void print_opcodes(int n)
 {
-	unsigned char *main_ptr = (unsigned char *)print_opcodes;
+	unsigned char *main_ptr = (unsigned char *)main;
 	int i;
 
 	for (i = 0; i < n; i++)
