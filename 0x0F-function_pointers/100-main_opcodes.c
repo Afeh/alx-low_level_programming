@@ -24,12 +24,12 @@ int main(int argc, char *argv[])
 		return (2);
 	}
 
-	unsigned char *main_ptr = (unsigned char *)main;
+	unsigned char *main_opcode = (unsigned char *)main;
 
 	for (int i = 0; i < bytes - 1; i++)
-		printf("%02hhx ", main_ptr[i]);
+		printf("%02hhx ", main_opcode[i]);
 
-	printf("%02hhx\n", main_ptr[bytes - 1]);
+	printf("%02hhx\n", main_opcode[bytes - 1]);
 
 	return (0);
 }
