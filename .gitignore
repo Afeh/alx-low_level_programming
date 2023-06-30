@@ -1,9 +1,7 @@
 7-main.c
 7-diagonals
 _putchar.c
-3-main.c
 3-puts
-*-main.c
 4-print_rev
 5-rev_string
 0-strcat
