@@ -7,14 +7,12 @@
  */
 void print_opcodes(int n)
 {
-	unsigned char *main_ptr = (unsigned char *)main;
+	unsigned char *main_ptr = (unsigned char *)print_opcodes;
 	int i;
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%02x", main_ptr[i]);
-		if (i < n - 1)
-			printf(" ");
+		printf("%02x ", main_ptr[i]);
 	}
 
 	printf("\n");
