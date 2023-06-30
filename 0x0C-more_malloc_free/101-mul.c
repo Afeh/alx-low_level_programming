@@ -14,7 +14,7 @@ int is_digit(char *str)
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			return 0;
+			return (0);
 		i++;
 	}
 
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 	{
 		printf("Error\n");
-		return 98;
+		return (98);
 	}
 
 	multiply(argv[1], argv[2]);
