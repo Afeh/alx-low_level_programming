@@ -2,18 +2,27 @@
 #include <string.h>
 
 /**
- * _realloc - Entry point
- *@ptr: pointer to the memory previously allocated
- *@old_size: size of the allocated ptr
- *@new_size: size of new memory block
- * Return: a pointer to an array
+ * _realloc - reallocates a memory block
+ * @ptr: pointer to the memory block to be reallocated
+ * @old_size: size of the allocated space for ptr
+ * @new_size: new size of the memory block
+ *
+ * Return: Pointer to the reallocated memory block
  */
-
-
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;
-	unsigned int copy_size;
+
+	if (new_size == old_size)
+		return (ptr);
+
+	if (ptr == NULL)
+	{
+		new_ptr = malloc(new_size);
+		if (new_ptr == NULL)
+			return (NULL);
+		return (new_ptr);
+	}
 
 	if (new_size == 0)
 	{
@@ -21,26 +30,15 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	if (ptr == NULL)
-	{
-		return (malloc(new_size));
-	}
-
-	if (new_size == old_size)
-	{
-		return (ptr);
-	}
-
 	new_ptr = malloc(new_size);
-
 	if (new_ptr == NULL)
-	{
 		return (NULL);
-	}
 
-	copy_size = old_size < new_size ? old_size : new_size;
-	memcpy(new_ptr, ptr, copy_size);
+	if (new_size < old_size)
+		memcpy(new_ptr, ptr, new_size);
+	else
+		memcpy(new_ptr, ptr, old_size);
+
 	free(ptr);
-
 	return (new_ptr);
 }
