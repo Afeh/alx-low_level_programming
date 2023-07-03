@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include "lists.h"
+/**
+ * list_len - function that counts the number of nodes
+ * @h: string to search
+ * Return: number of nodes
+ *
+ */
 
 size_t list_len(const list_t *h)
 {
