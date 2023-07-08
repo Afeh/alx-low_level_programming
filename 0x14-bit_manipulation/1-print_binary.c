@@ -14,12 +14,12 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		_putchar('0'); // Special case for 0
+		_putchar('0');
 		return;
 	}
 
 	mask = 1UL << ((sizeof(unsigned long int) * 8) - 1);
-	leadingZeros = 1; // Flag to skip leading zeros
+	leadingZeros = 1;
 
 	while (mask != 0)
 	{
@@ -33,6 +33,6 @@ void print_binary(unsigned long int n)
 			_putchar('0');
 		}
 
-		mask >>= 1; // Shift the mask to the right
+		mask >>= 1;
 	}
 }
