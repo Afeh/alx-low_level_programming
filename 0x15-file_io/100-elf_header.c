@@ -243,6 +243,15 @@ void close_elf(int elf)
 	}
 }
 
+
+/**
+ * main - displays the information contained in the elf header 
+ * 
+ * @argc: the number of arguments supplied to the program
+ * @argv: An array of pointers to the arguments
+ *
+ * Return: 0 on success
+ */
 int main(int argc, char *argv[])
 {
 	Elf64_Ehdr header;
