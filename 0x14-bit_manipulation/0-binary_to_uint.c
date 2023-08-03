@@ -9,10 +9,9 @@
  * Return: the converted unsigned int value
  */
 
-
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int  i = 0;
+	unsigned int i = 0;
 	unsigned int result = 0;
 
 	if (b == NULL)
@@ -25,7 +24,6 @@ unsigned int binary_to_uint(const char *b)
 			result = result * 2 + (b[i] - '0');
 			i++;
 		}
-
 		else
 			return (0);
 	}
