@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * get_endianness - Get the endianness object
+ *
+ * Return: 0 or 1
+ */
+
 int get_endianness(void)
 {
 	unsigned int test_value = 0x01;
